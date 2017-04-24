@@ -39,19 +39,19 @@ main() {
 	
 	# get proper aapt version
 	# http://stackoverflow.com/a/8597411
-	if [[ "$OSTYPE" == "linux-gnu" ]]; then
-		# linux-gnu
-		aapt=aapt
-	elif [[ "$OSTYPE" == "cygwin" ]]; then
-		# POSIX compatibility layer and Linux environment emulation for Windows
-		aapt=aapt.exe
-	elif [[ "$OSTYPE" == "msys" ]]; then
-		# Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-		aapt=aapt.exe
-	else
-		printf "Unsupported OS type" 1>&2
-		exit 1
-	fi						
+	case "$OSTYPE" in
+		linux-gnu) 
+			aapt=aapt
+			;;
+		cygwin|msys)
+			aapt=aapt.exe
+			;;
+		*)
+			printf "Unsupported OS type %s\n" "$OSTYPE" 1>&2
+			exit 1
+			;;
+	esac
+					
 	printf "AAPT: %s\nBuilding overlays...\n" "$aapt"
 	for f in $1/*/; do 
 		buildApk "$f" "./frameworks/n-lineage-nexus-5.apk" $aapt 2>> builds/log.txt
