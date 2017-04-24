@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #####################################
-#	Substratum Overlay Builder	    #
-#	run with sh and full path to    #
-#	assets/overlays directory 	    #
-#				- Pitched Apps	    #
+#   Substratum Overlay Builder      #
+#   run with sh and full path to    #
+#   assets/overlays directory       #
+#              - Pitched Apps       #
 #####################################
 
 # $1    full package dir
