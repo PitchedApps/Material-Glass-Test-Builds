@@ -40,6 +40,10 @@ main() {
 	# get proper aapt version
 	# http://stackoverflow.com/a/8597411
 	case "$OSTYPE" in
+		"")
+			echo "empty OSTYPE; defaulting to linux"
+			aapt=aapt
+			;;
 		linux-gnu) 
 			aapt=aapt
 			;;
