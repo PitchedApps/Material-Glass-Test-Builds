@@ -17,7 +17,7 @@
 # -f    force overwrite of existing files
 # -F    apk output file
 # -v	verbose for debug
-function buildApk() {
+buildApk() {
 	if [ -d "$1/res" ]; then
 		name="$(basename "$1")"
 		printf "\n%s\n" "$name"
