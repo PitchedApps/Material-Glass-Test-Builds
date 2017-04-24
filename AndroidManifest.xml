@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.pitchedapps.material.glass.substratum.travis.test"
+          android:versionName="1.0">
+    <application
+            android:label="com.pitchedapps.material.glass.substratum.travis.test">
+    </application>
+</manifest>
